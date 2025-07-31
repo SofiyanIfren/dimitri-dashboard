@@ -1,4 +1,4 @@
-# Étape 1 : build de l'app React
+# Étape 1 : build de l'app React avec Vite
 FROM node:18-alpine as build
 
 WORKDIR /app
@@ -9,13 +9,10 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# Étape 2 : serveur Nginx pour servir le build statique
+# Étape 2 : Serveur nginx
 FROM nginx:stable-alpine
 
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Remplacer la config par défaut si besoin (optionnel)
-# COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
