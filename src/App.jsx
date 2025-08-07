@@ -13,6 +13,7 @@ import './charts/ChartjsConfig';
 import HomePage from './pages/HomePage';
 import CustomersPage from './pages/CustomersPage';
 import ActivityPage from './pages/ActivityPage';
+import NotificationPage from './pages/NotificationPage';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/customers" element={<CustomersPage />} />
         <Route exact path="/activity" element={<ActivityPage />} />
+        <Route exact path="/notification" element={<NotificationPage />} />
       </Routes>
     </>
   );
