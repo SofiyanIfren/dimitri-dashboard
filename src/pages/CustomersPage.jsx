@@ -7,8 +7,11 @@ import Datepicker from '../components/Datepicker';
 import CustomersDashboardCard from '../partials/dashboard/CustomersDashboardCard';
 import Banner from '../partials/Banner';
 
+import { useTexts } from "../texts/TextsContext";
+
 function Customers() {
 
+  const { texts, lang, setLang } = useTexts();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -31,7 +34,7 @@ function Customers() {
 
               {/* Left: Title */}
               <div className="mb-4 sm:mb-0">
-                <h1 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-100 font-bold">Customers dashboard</h1>
+                <h1 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-100 font-bold">{texts.customersDashboard}</h1>
               </div>
 
               {/* Right: Actions */}

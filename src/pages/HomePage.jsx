@@ -11,9 +11,11 @@ import GivenRewardsDashboardCard from '../partials/dashboard/GivenRewardsDashboa
 import TopRewardsDashboardCard from '../partials/dashboard/TopRewardsDashboardCard'
 
 import Banner from '../partials/Banner';
+import { useTexts } from "../texts/TextsContext";
 
 function Home() {
 
+  const { texts, lang, setLang } = useTexts();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -36,7 +38,7 @@ function Home() {
 
               {/* Left: Title */}
               <div className="mb-4 sm:mb-0">
-                <h1 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-100 font-bold">Main dashboard</h1>
+                <h1 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-100 font-bold">{texts.mainDashboard}</h1>
               </div>
 
               {/* Right: Actions */}

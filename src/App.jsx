@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Routes,
   Route,
@@ -8,6 +8,8 @@ import {
 import './css/style.css';
 
 import './charts/ChartjsConfig';
+
+import { TextsProvider } from "./texts/TextsContext";
 
 // Import pages
 import HomePage from './pages/HomePage';
@@ -26,14 +28,14 @@ function App() {
   }, [location.pathname]); // triggered on route change
 
   return (
-    <>
+    <TextsProvider>
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/customers" element={<CustomersPage />} />
-        <Route exact path="/activity" element={<ActivityPage />} />
-        <Route exact path="/notification" element={<NotificationPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/customers" element={<CustomersPage />} />
+        <Route path="/activity" element={<ActivityPage />} />
+        <Route path="/notification" element={<NotificationPage />} />
       </Routes>
-    </>
+    </TextsProvider>
   );
 }
 

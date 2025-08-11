@@ -2,12 +2,15 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Transition from '../utils/Transition';
 
+import { useTexts } from "../texts/TextsContext";
+
 import UserAvatar from '../images/user-avatar-32.png';
 
 function DropdownProfile({
   align
 }) {
 
+  const { texts, lang, setLang } = useTexts();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef(null);
@@ -45,7 +48,7 @@ function DropdownProfile({
       >
         <img className="w-8 h-8 rounded-full" src={UserAvatar} width="32" height="32" alt="User" />
         <div className="flex items-center truncate">
-          <span className="truncate ml-2 text-sm font-medium text-gray-600 dark:text-gray-100 group-hover:text-gray-800 dark:group-hover:text-white">Your profile</span>
+          <span className="truncate ml-2 text-sm font-medium text-gray-600 dark:text-gray-100 group-hover:text-gray-800 dark:group-hover:text-white">{texts.yourProfile}</span>
           <svg className="w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500" viewBox="0 0 12 12">
             <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
           </svg>
@@ -68,8 +71,8 @@ function DropdownProfile({
           onBlur={() => setDropdownOpen(false)}
         >
           <div className="pt-0.5 pb-2 px-3 mb-1 border-b border-gray-200 dark:border-gray-700/60">
-            <div className="font-medium text-gray-800 dark:text-gray-100">Your profile</div>
-            <div className="text-xs text-gray-500 dark:text-gray-400 italic">Administrator</div>
+            <div className="font-medium text-gray-800 dark:text-gray-100">{texts.yourProfile}</div>
+            <div className="text-xs text-gray-500 dark:text-gray-400 italic">{texts.administrator}</div>
           </div>
           <ul>
             <li>
@@ -78,7 +81,7 @@ function DropdownProfile({
                 to="/settings"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
-                Settings
+                {texts.settings}
               </Link>
             </li>
             <li>
@@ -87,7 +90,7 @@ function DropdownProfile({
                 to="/signin"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
-                Sign Out
+                {texts.signOut}
               </Link>
             </li>
           </ul>

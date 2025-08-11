@@ -7,7 +7,11 @@ import EditMenu from '../../components/DropdownEditMenu';
 // Import utilities
 import { adjustColorOpacity, getCssVariable } from '../../utils/Utils';
 
+import { useTexts } from "../../texts/TextsContext";
+
 function TotalStampsDashboardCard() {
+
+  const { texts, lang, setLang } = useTexts();
 
   const chartData = {
     labels: [
@@ -83,7 +87,7 @@ function TotalStampsDashboardCard() {
     <div className="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white dark:bg-gray-800 shadow-xs rounded-xl">
       <div className="px-5 pt-5">
         <header className="flex justify-between items-start mb-2">
-          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Stamps of the month</h2>
+          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">{texts.stampsOfTheMonth}</h2>
           {/* Menu button
           <EditMenu align="right" className="relative inline-flex">
             <li>
@@ -103,9 +107,9 @@ function TotalStampsDashboardCard() {
             </li>
           </EditMenu> */}
         </header>
-        <div className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase mb-1">Total given</div>
+        <div className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase mb-1">{texts.totalGiven}</div>
         <div className="flex items-start">
-          <div className="text-3xl font-bold text-gray-800 dark:text-gray-100 mr-2">633 stamps</div>
+          <div className="text-3xl font-bold text-gray-800 dark:text-gray-100 mr-2">633 {texts.stamps}</div>
           <div className="text-sm font-medium text-green-700 px-1.5 bg-green-500/20 rounded-full">+33%</div>
         </div>
       </div>

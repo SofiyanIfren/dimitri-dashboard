@@ -1,10 +1,15 @@
 import React from 'react';
 
+import { useTexts } from "../../texts/TextsContext";
+
 function TopRewardsDashboardCard() {
+
+  const { texts, lang, setLang } = useTexts();
+
   return (
     <div className="col-span-full xl:col-span-8 bg-white dark:bg-gray-800 shadow-xs rounded-xl">
       <header className="px-5 py-4 border-b border-gray-100 dark:border-gray-700/60">
-        <h2 className="font-semibold text-gray-800 dark:text-gray-100">Top Rewards</h2>
+        <h2 className="font-semibold text-gray-800 dark:text-gray-100">{texts.topRewards}</h2>
       </header>
       <div className="p-3">
         {/* Table */}
@@ -14,19 +19,19 @@ function TopRewardsDashboardCard() {
             <thead className="text-xs uppercase text-gray-400 dark:text-gray-500 bg-gray-50 dark:bg-gray-700/50 rounded-xs">
               <tr>
                 <th className="p-2">
-                  <div className="font-semibold text-left">Reward Type</div>
+                  <div className="font-semibold text-left">{texts.rewardType}</div>
                 </th>
                 <th className="p-2">
-                  <div className="font-semibold text-center">Total Customers</div>
+                  <div className="font-semibold text-center">{texts.totalCustomers}</div>
                 </th>
                 <th className="p-2">
-                  <div className="font-semibold text-center">Total Stamps</div>
+                  <div className="font-semibold text-center">{texts.totalStamps}</div>
                 </th>
                 <th className="p-2">
-                  <div className="font-semibold text-center">Rewards Cost</div>
+                  <div className="font-semibold text-center">{texts.rewardsCost}</div>
                 </th>
                 <th className="p-2">
-                  <div className="font-semibold text-center">Total Profit</div>
+                  <div className="font-semibold text-center">{texts.totalProfit}</div>
                 </th>
               </tr>
             </thead>
@@ -37,14 +42,14 @@ function TopRewardsDashboardCard() {
                 <td className="p-2">
                   <div className="flex items-center">
                     <span className="text-2xl mr-2 sm:mr-3">☕️</span>
-                    <div className="text-gray-800 dark:text-gray-100">Coffe</div>
+                    <div className="text-gray-800 dark:text-gray-100">{texts.coffee}</div>
                   </div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">5,362 members</div>
+                  <div className="text-center">5,362 {texts.members}</div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">53,620 visits</div>
+                  <div className="text-center">53,620 {texts.visits}</div>
                 </td>
                 <td className="p-2">
                   <div className="text-center text-sky-500">$10,992.1</div>
@@ -58,14 +63,14 @@ function TopRewardsDashboardCard() {
                 <td className="p-2">
                   <div className="flex items-center">
                     <span className="text-2xl mr-2 sm:mr-3">🍰</span>
-                    <div className="text-gray-800 dark:text-gray-100">Cake</div>
+                    <div className="text-gray-800 dark:text-gray-100">{texts.cake}</div>
                   </div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">899 members</div>
+                  <div className="text-center">899 {texts.members}</div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">7,192 visits</div>
+                  <div className="text-center">7,192 {texts.visits}</div>
                 </td>
                 <td className="p-2">
                   <div className="text-center text-sky-500">$3,146.5</div>
@@ -79,14 +84,14 @@ function TopRewardsDashboardCard() {
                 <td className="p-2">
                   <div className="flex items-center">
                     <span className="text-2xl mr-2 sm:mr-3">🍽️</span>
-                    <div className="text-gray-800 dark:text-gray-100">Meal</div>
+                    <div className="text-gray-800 dark:text-gray-100">{texts.meal}</div>
                   </div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">265 members</div>
+                  <div className="text-center">265 {texts.members}</div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">3,975 visits</div>
+                  <div className="text-center">3,975 {texts.visits}</div>
                 </td>
                 <td className="p-2">
                   <div className="text-center text-sky-500">$1,192.5</div>
@@ -100,14 +105,14 @@ function TopRewardsDashboardCard() {
                 <td className="p-2">
                   <div className="flex items-center">
                     <span className="text-2xl mr-2 sm:mr-3">🧸</span>
-                    <div className="text-gray-800 dark:text-gray-100">Child Toy</div>
+                    <div className="text-gray-800 dark:text-gray-100">{texts.childToy}</div>
                   </div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">230 members</div>
+                  <div className="text-center">230 {texts.members}</div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">2,300 visits</div>
+                  <div className="text-center">2,300 {texts.visits}</div>
                 </td>
                 <td className="p-2">
                   <div className="text-center text-sky-500">$345.0</div>
@@ -121,14 +126,14 @@ function TopRewardsDashboardCard() {
                 <td className="p-2">
                   <div className="flex items-center">
                     <span className="text-2xl mr-2 sm:mr-3">🏷️</span>
-                    <div className="text-gray-800 dark:text-gray-100">Discount</div>
+                    <div className="text-gray-800 dark:text-gray-100">{texts.discount}</div>
                   </div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">150 members</div>
+                  <div className="text-center">150 {texts.members}</div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">750 visits</div>
+                  <div className="text-center">750 {texts.visits}</div>
                 </td>
                 <td className="p-2">
                   <div className="text-center text-sky-500">$4,500.0</div>

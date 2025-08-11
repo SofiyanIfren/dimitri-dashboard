@@ -6,7 +6,11 @@ import Image03 from '../../images/user-36-07.jpg';
 import Image04 from '../../images/user-36-08.jpg';
 import Image05 from '../../images/user-36-09.jpg';
 
+import { useTexts } from "../../texts/TextsContext";
+
 function CustomersDashboardCard() {
+
+  const { texts, lang, setLang } = useTexts();
 
   const customers = [
     {
@@ -224,7 +228,7 @@ function CustomersDashboardCard() {
   return (
     <div className="col-span-full xl:col-span-12 bg-white dark:bg-gray-800 shadow-xs rounded-xl">
       <header className="px-5 py-4 border-b border-gray-100 dark:border-gray-700/60">
-        <h2 className="font-semibold text-gray-800 dark:text-gray-100">Best Customers</h2>
+        <h2 className="font-semibold text-gray-800 dark:text-gray-100">{texts.bestCustomers}</h2>
       </header>      
       <div className="p-3">
 
@@ -235,22 +239,22 @@ function CustomersDashboardCard() {
             <thead className="text-xs font-semibold uppercase text-gray-400 dark:text-gray-500 bg-gray-50 dark:bg-gray-700/50">
               <tr>
                 <th className="p-2 whitespace-nowrap">
-                  <div className="font-semibold text-left">Name</div>
+                  <div className="font-semibold text-left">{texts.name}</div>
                 </th>
                 <th className="p-2 whitespace-nowrap">
-                  <div className="font-semibold text-left">Email</div>
+                  <div className="font-semibold text-left">{texts.email}</div>
                 </th>
                 <th className="p-2 whitespace-nowrap">
-                  <div className="font-semibold text-left">Stamps</div>
+                  <div className="font-semibold text-left">{texts.stamps}</div>
                 </th>
                 <th className="p-2 whitespace-nowrap">
-                  <div className="font-semibold text-left">Spent</div>
+                  <div className="font-semibold text-left">{texts.spent}</div>
                 </th>
                 <th className="p-2 whitespace-nowrap">
-                  <div className="font-semibold text-center">Last stamp</div>
+                  <div className="font-semibold text-center">{texts.lastStamp}</div>
                 </th>
                 <th className="p-2 whitespace-nowrap">
-                  <div className="font-semibold text-center">Country</div>
+                  <div className="font-semibold text-center">{texts.country}</div>
                 </th>
               </tr>
             </thead>

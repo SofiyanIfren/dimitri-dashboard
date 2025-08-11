@@ -9,11 +9,13 @@ import ActiveCustomersDashboardCard from '../partials/dashboard/ActiveCustomersD
 import NewCustomersDashboardCard from '../partials/dashboard/NewCustomersDashboardCard';
 import GivenRewardsDashboardCard from '../partials/dashboard/GivenRewardsDashboardCard';
 import TopRewardsDashboardCard from '../partials/dashboard/TopRewardsDashboardCard'
-
 import Banner from '../partials/Banner';
+
+import { useTexts } from "../texts/TextsContext";
 
 function Notification() {
 
+  const { texts, lang, setLang } = useTexts();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const [title, setTitle] = useState('');
@@ -42,11 +44,11 @@ function Notification() {
 
        <main className="grow p-6">
           <div className="max-w-lg mx-auto mt-10">
-            <h2 className="text-2xl font-bold mb-4">Send Notification</h2>
+            <h2 className="text-2xl font-bold mb-4">{texts.sendNotification}</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="title" className="block text-sm font-medium">
-                  Title
+                  {texts.title}
                 </label>
                 <input
                   type="text"
@@ -60,7 +62,7 @@ function Notification() {
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium">
-                  Body of the message
+                  {texts.bodyOfTheMessage}
                 </label>
                 <textarea
                   id="message"
@@ -75,7 +77,7 @@ function Notification() {
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
               >
-                Send
+                {texts.send}
               </button>
             </form>
           </div>
